@@ -99,6 +99,12 @@ cargo build --release
 cargo install --path devdust-cli
 ```
 
+#### Using Cargo
+
+```bash
+cargo install devdust
+```
+
 > [!NOTE]
 > Make sure `~/.cargo/bin` is in your PATH to use the `devdust` command globally.
 
@@ -396,3 +402,4 @@ devdust was built from scratch with modern Rust practices, inspired by similar t
 ---
 
 **Made with ❤️ and Rust** | [Report Issues](https://github.com/extrise/devdust/issues) | [View Releases](https://github.com/extrise/devdust/releases)
+
