@@ -1,0 +1,25 @@
+[package]
+name = "devdust"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Clean build artifacts from development projects to reclaim disk space"
+
+[[bin]]
+name = "devdust"
+path = "src/main.rs"
+
+[dependencies]
+# Core library
+devdust-core = { version = "1.0.0", path = "../devdust-core" }
+
+# Command-line argument parsing
+clap = { version = "4.5", features = ["derive", "cargo"] }
+
+# Terminal colors and styling
+colored = "2.1"
+
+# Progress indicators
+indicatif = "0.17"

@@ -1,0 +1,20 @@
+[workspace]
+members = ["devdust-cli", "devdust-core"]
+resolver = "2"
+
+[workspace.package]
+version = "1.0.0"
+authors = ["Ext Rise <nayanchandradas@hotmail.com>"]
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/extrise/devdust"
+
+[profile.release]
+# Enable link-time optimization for smaller binaries
+lto = "thin"
+# Optimize for size
+opt-level = "z"
+# Single codegen unit for better optimization
+codegen-units = 1
+# Strip debug symbols
+strip = true
