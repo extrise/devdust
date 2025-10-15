@@ -6,6 +6,7 @@ edition.workspace = true
 license.workspace = true
 repository.workspace = true
 description = "Clean build artifacts from development projects to reclaim disk space"
+readme = "../README.md"
 
 [[bin]]
 name = "devdust"
@@ -23,3 +24,4 @@ colored = "2.1"
 
 # Progress indicators
 indicatif = "0.17"
+
