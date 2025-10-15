@@ -6,9 +6,11 @@ edition.workspace = true
 license.workspace = true
 repository.workspace = true
 description = "Core library for detecting and cleaning development project artifacts"
+readme = "../README.md"
 
 [dependencies]
 # File system walking with filtering capabilities
 walkdir = "2.5"
 # Ignore patterns (respects .gitignore, etc.)
 ignore = "0.4"
+
