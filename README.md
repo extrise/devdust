@@ -41,14 +41,11 @@ Dev Dust is a fast, cross-platform command-line tool written in Rust that recurs
 - [x] **Zig** - Zig projects (`zig-cache/`, `zig-out/`)
 - [x] **Godot** - Godot 4.x projects (`.godot/`)
 - [x] **Jupyter** - Jupyter notebooks (`.ipynb_checkpoints/`)
-
-### Roadmap
-
-- [ ] **Go** - Go modules (`vendor/`, `bin/`)
-- [ ] **Ruby** - Bundler projects (`vendor/bundle/`)
-- [ ] **Terraform** - Infrastructure projects (`.terraform/`)
-- [ ] **Docker** - Build cache and volumes
-- [ ] **Bazel** - Build system (`bazel-*/`)
+- [x] **Go** - Go modules (`vendor/`, `bin/`)
+- [x] **Ruby** - Bundler projects (`vendor/bundle/`)
+- [x] **Terraform** - Infrastructure projects (`.terraform/`)
+- [x] **Docker** - Build cache and volumes
+- [x] **Bazel** - Build system (`bazel-*/`)
 
 </details>
 
@@ -145,11 +142,11 @@ Pre-built binaries are available for multiple platforms via GitHub Releases:
 
 | Platform | Architecture | Download |
 |----------|--------------|----------|
-| Linux    | x86_64       | [Download `devdust-linux-x86_64`](https://github.com/extrise/devdust/releases/latest) |
-| Linux    | ARM64        | [Download `devdust-linux-aarch64`](https://github.com/extrise/devdust/releases/latest) |
-| macOS    | Intel        | [Download `devdust-macos-x86_64`](https://github.com/extrise/devdust/releases/latest) |
-| macOS    | Apple Silicon| [Download `devdust-macos-aarch64`](https://github.com/extrise/devdust/releases/latest) |
-| Windows  | x86_64       | [Download `devdust-windows-x86_64.exe`](https://github.com/extrise/devdust/releases/latest) |
+| Linux    | x86_64       | devdust-linux-x86_64 |
+| Linux    | ARM64        | devdust-linux-aarch64 |
+| macOS    | Intel        | devdust-macos-x86_64 |
+| macOS    | Apple Silicon| devdust-macos-aarch64 |
+| Windows  | x86_64       | devdust-windows-x86_64.exe |
 
 ## Usage
 

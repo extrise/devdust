@@ -63,6 +63,16 @@ pub enum ProjectType {
     Godot,
     /// Jupyter notebooks (.ipynb)
     Jupyter,
+    /// Go projects (go.mod)
+    Go,
+    /// Ruby projects (Gemfile)
+    Ruby,
+    /// Terraform projects (*.tf files)
+    Terraform,
+    /// Docker projects (Dockerfile)
+    Docker,
+    /// Bazel projects (WORKSPACE, BUILD)
+    Bazel,
 }
 
 impl ProjectType {
@@ -87,6 +97,11 @@ impl ProjectType {
             Self::Zig => "Zig",
             Self::Godot => "Godot",
             Self::Jupyter => "Jupyter",
+            Self::Go => "Go",
+            Self::Ruby => "Ruby",
+            Self::Terraform => "Terraform",
+            Self::Docker => "Docker",
+            Self::Bazel => "Bazel",
         }
     }
 
@@ -144,6 +159,11 @@ impl ProjectType {
             Self::Zig => &["zig-cache", "zig-out"],
             Self::Godot => &[".godot"],
             Self::Jupyter => &[".ipynb_checkpoints"],
+            Self::Go => &["vendor", "bin"],
+            Self::Ruby => &["vendor/bundle"],
+            Self::Terraform => &[".terraform", ".terraform.lock.hcl"],
+            Self::Docker => &[".docker"],
+            Self::Bazel => &["bazel-bin", "bazel-out", "bazel-testlogs", "bazel-*"],
         }
     }
 
@@ -173,6 +193,11 @@ impl ProjectType {
                 "build.zig" => return Some(Self::Zig),
                 "project.godot" => return Some(Self::Godot),
                 "Assembly-CSharp.csproj" => return Some(Self::Unity),
+                "go.mod" => return Some(Self::Go),
+                "Gemfile" => return Some(Self::Ruby),
+                "Dockerfile" => return Some(Self::Docker),
+                "WORKSPACE" | "WORKSPACE.bazel" => return Some(Self::Bazel),
+                "BUILD" | "BUILD.bazel" => return Some(Self::Bazel),
                 _ => {}
             }
 
@@ -192,6 +217,9 @@ impl ProjectType {
             }
             if file_name_str.ends_with(".ipynb") {
                 return Some(Self::Jupyter);
+            }
+            if file_name_str.ends_with(".tf") {
+                return Some(Self::Terraform);
             }
             if file_name_str.ends_with(".py") {
                 // Check if there are Python artifacts
@@ -567,5 +595,10 @@ mod tests {
         assert_eq!(ProjectType::Rust.name(), "Rust");
         assert_eq!(ProjectType::Node.name(), "Node.js");
         assert_eq!(ProjectType::Python.name(), "Python");
+        assert_eq!(ProjectType::Go.name(), "Go");
+        assert_eq!(ProjectType::Ruby.name(), "Ruby");
+        assert_eq!(ProjectType::Terraform.name(), "Terraform");
+        assert_eq!(ProjectType::Docker.name(), "Docker");
+        assert_eq!(ProjectType::Bazel.name(), "Bazel");
     }
 }

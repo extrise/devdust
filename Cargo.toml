@@ -3,7 +3,7 @@ members = ["devdust-cli", "devdust-core"]
 resolver = "2"
 
 [workspace.package]
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Ext Rise <nayanchandradas@hotmail.com>"]
 edition = "2021"
 license = "MIT"

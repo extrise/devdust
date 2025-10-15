@@ -29,8 +29,8 @@ use devdust_core::{format_elapsed_time, format_size, scan_directory, Project, Sc
     author = "Ext Rise <nayanchandradas@hotmail.com>",
     about = "Scan and clean build artifacts from development projects",
     long_about = "Dev Dust recursively scans directories to find development projects \
-                  (Rust, Node.js, Python, .NET, Unity, etc.) and cleans their build \
-                  artifacts to reclaim disk space."
+                  (Rust, Node.js, Python, Go, Ruby, Terraform, Docker, Bazel, and 15+ more) \
+                  and cleans their build artifacts to reclaim disk space."
 )]
 struct Args {
     /// Directories to scan (defaults to current directory)
@@ -269,7 +269,7 @@ fn run(args: Args) -> Result<(), Box<dyn std::error::Error>> {
 /// Prints the application header
 fn print_header() {
     println!("{}", "╔═══════════════════════════════════════╗".cyan());
-    println!("{}", "║         Dev Dust v1.0.0               ║".cyan());
+    println!("{}", "║         Dev Dust v1.0.1               ║".cyan());
     println!("{}", "║  Clean Development Project Artifacts  ║".cyan());
     println!("{}", "╚═══════════════════════════════════════╝".cyan());
     println!();
