@@ -73,7 +73,10 @@ The install script supports several options:
 
 ```bash
 # Install to a custom directory
-./install.sh --prefix ~/.local
+./install.sh --install-dir ~/.local
+
+# Automatically install Rust if not found
+./install.sh --auto-install-rust
 
 # Run tests before installing
 ./install.sh --test
@@ -81,9 +84,37 @@ The install script supports several options:
 # Skip building (use existing binary)
 ./install.sh --skip-build
 
+# Uninstall devdust
+./install.sh --uninstall
+
 # Show help
 ./install.sh --help
 ```
+
+**Available Flags:**
+
+| Flag | Description |
+|------|-------------|
+| `--install-dir DIR` | Specify custom installation directory (default: `~/.local/bin`) |
+| `--auto-install-rust` | Automatically install Rust if not detected |
+| `--test` | Run test suite before installing |
+| `--skip-build` | Skip building, use existing binary |
+| `--uninstall` | Remove devdust from system |
+| `--help` | Display help information |
+
+#### Interactive Menu Mode
+
+Running `./install.sh` without arguments launches an interactive menu with colorful options:
+
+- **Install devdust** - Automatically detects OS, checks/installs Rust, builds, and installs
+- **Uninstall devdust** - Removes the installed binary
+- **Exit** - Quit the installer
+
+The installer includes:
+- ✅ Automatic OS detection (Linux, macOS, Windows/WSL)
+- ✅ Rust installation check and auto-install option
+- ✅ Cross-platform support with proper PATH configuration
+- ✅ Colorful, user-friendly interface
 
 ### Manual Installation
 
@@ -113,12 +144,12 @@ cargo install devdust
 Pre-built binaries are available for multiple platforms via GitHub Releases:
 
 | Platform | Architecture | Download |
-|----------|-------------|----------|
-| Linux | x86_64 | `devdust-linux-x86_64` |
-| Linux | ARM64 | `devdust-linux-aarch64` |
-| macOS | Intel | `devdust-macos-x86_64` |
-| macOS | Apple Silicon | `devdust-macos-aarch64` |
-| Windows | x86_64 | `devdust-windows-x86_64.exe` |
+|----------|--------------|----------|
+| Linux    | x86_64       | [Download `devdust-linux-x86_64`](https://github.com/extrise/devdust/releases/latest) |
+| Linux    | ARM64        | [Download `devdust-linux-aarch64`](https://github.com/extrise/devdust/releases/latest) |
+| macOS    | Intel        | [Download `devdust-macos-x86_64`](https://github.com/extrise/devdust/releases/latest) |
+| macOS    | Apple Silicon| [Download `devdust-macos-aarch64`](https://github.com/extrise/devdust/releases/latest) |
+| Windows  | x86_64       | [Download `devdust-windows-x86_64.exe`](https://github.com/extrise/devdust/releases/latest) |
 
 ## Usage
 
@@ -402,4 +433,3 @@ devdust was built from scratch with modern Rust practices, inspired by similar t
 ---
 
 **Made with ❤️ and Rust** | [Report Issues](https://github.com/extrise/devdust/issues) | [View Releases](https://github.com/extrise/devdust/releases)
-
